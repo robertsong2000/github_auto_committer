@@ -61,8 +61,12 @@ git commit -m "Initial commit"
 echo "正在配置远程仓库..."
 git remote add origin "https://$GITHUB_TOKEN@github.com/$GITHUB_USERNAME/$repo_name.git"
 
+# 创建并切换到main分支
+echo "正在创建main分支..."
+git branch -M main
+
 # 推送到GitHub
 echo "正在推送到GitHub..."
-git push -u origin master
+git push -u origin main
 
 echo "完成！仓库已成功创建并推送到GitHub：https://github.com/$GITHUB_USERNAME/$repo_name"
